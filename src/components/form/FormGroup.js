@@ -4,6 +4,7 @@ import styled from "styled-components";
 export default function FormGroup({
 	label,
 	input,
+	overridePlaceholder = false,
 	onFocusColor = "red",
 	outOfFocusColor = "grey",
 	...props
@@ -15,15 +16,15 @@ export default function FormGroup({
 
 	const handleInputChange = ({ target }) => {
 		const { value } = target;
-		setInputIsEmpty(!value);
-		input?.onChange(value);
+		setInputIsEmpty(!value && !focused);
+		input.onChange?.(value);
 	};
 
-	const { placeholder } = input;
 	const htmlFor = input.name || null;
 	return (
 		<FormGroupContainer
-			showPlaceholder={inputIsEmpty}
+			setLabelAsPlaceholder={inputIsEmpty}
+			hasLabel={!!label}
 			{...{
 				focused,
 				onFocusColor,
@@ -31,7 +32,11 @@ export default function FormGroup({
 				...props,
 			}}
 		>
-			{label ? <label {...htmlFor}>{label}</label> : null}
+			{label ? (
+				<label {...htmlFor}>
+					{(overridePlaceholder && inputIsEmpty && input.placeholder) || label}
+				</label>
+			) : null}
 			<input
 				{...input}
 				onChange={handleInputChange}
@@ -49,17 +54,38 @@ export default function FormGroup({
 }
 
 const FormGroupContainer = styled.div`
+	--ifz: 1rem;
+	--cpad: 0.5rem;
+	--padt: calc(var(--cpad) * 2);
+	position: relative;
+	padding-top: calc(var(--padt) + var(--cpad));
 	display: flex;
 	flex-direction: column;
-	border-bottom: 1px solid ${focused ? onFocusColor : outOfFocusColor};
+	border-bottom: 1px solid
+		${(props) => (props.focused ? props.onFocusColor : props.outOfFocusColor)};
 	transition: border 0.2s ease-in-out;
 
 	label {
-		tranform: translateY(${(props) => (props.showPlaceholder ? "0" : "50%")});
-		font-size: ${props.showPlaceholder ? "1em" : ".9em"};
+		position: absolute;
+		top: ${(props) =>
+			props.setLabelAsPlaceholder ? "calc(var(--ifz) + var(--padt))" : "0"};
+		// font-size: ${(props) => (props.setLabelAsPlaceholder ? "1em" : ".9em")};
+		left: ${(props) => (!props.setLabelAsPlaceholder ? "0" : "var(--cpad)")};
+		color: ${(props) => (props.setLabelAsPlaceholder ? "#c4c4c4" : "#000")};
 		pointer-events: none;
-		transition-property: transform, font-size;
-		transition-duration: 0.2s;
+		transition-property: transform, font-size, top, left, color;
+		transition-duration: 0.25s;
 		transition-timing-function: ease-in-out;
+	}
+
+	input {
+		outline: none;
+		border: none;
+		padding: var(--cpad);
+		font-size: var(--ifz);
+
+		&::placeholder {
+			visibility: ${(props) => (props.hasLabel ? "hidden" : "visible")};
+		}
 	}
 `;
