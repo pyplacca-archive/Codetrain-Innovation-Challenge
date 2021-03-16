@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { navigate } from "@reach/router";
 import Blank from "../Blank";
 import { Settings } from "../Icons";
 
@@ -22,7 +23,7 @@ export default function NotificationsMenu({ ...props }) {
 			</ul>
 			<div className="notifications-footer">
 				<span>
-					<Settings />
+					<Settings onClick={() => navigate("/settings")}/>
 				</span>
 				<p>All notifications</p>
 			</div>
