@@ -1,0 +1,76 @@
+:root {
+  /* dimensions */
+  --pad-xs: .5rem;
+  --pad-s: .85rem;
+  --pad-m: 1.2rem;
+  --pad-l: 2.5rem;
+  --icon-size: 1.2rem;
+  /* colors */
+  --border-color: #ebebeb;
+  --artis-blue: #3640f7;
+  --artis-alt-blue: #0487d9;
+  --artis-light-blue: #05c7f2;
+  --artis-salmon: #ffd682;
+  --artis-purple: #e144af;
+  --artis-red: #ff6060;
+  --artis-grey: #b1b1b1;
+  --artis-light-grey: #ebebeb;
+  --safe-grey: #6d6a6a;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-display: swap;
+}
+
+p,
+span,
+li,
+div,
+a {
+  font-size: .9rem;
+}
+
+li {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+li:focus,
+li:hover {
+  /* font-weight: 500; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.app-icon {
+  object-fit: scale-down;
+}
+
+.app-icon:hover,
+.app-icon.outlined:hover,
+.app-icon.active {
+  --fill: var(--artis-blue);
+  fill: var(--fill);
+  transition-property: fill, stroke;
+  transition: all .1s ease-in-out;
+}
+
+.app-icon.outlined {
+  --fill: var(--safe-grey);
+  fill: transparent;
+  stroke: var(--fill);
+  stroke-width: 2;
+}
