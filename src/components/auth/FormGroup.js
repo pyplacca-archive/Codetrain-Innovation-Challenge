@@ -1,12 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { artisBlue, artisGrey } from "../../config";
 
 export default function FormGroup({
 	label,
 	input,
+	icon,
 	overridePlaceholder = false,
-	onFocusColor = "red",
-	outOfFocusColor = "grey",
+	onFocusColor = artisBlue,
+	outOfFocusColor = artisGrey,
 	...props
 }) {
 	// this form group sets the label as the placeholder for the input field when it's empty and out of focus and,
@@ -25,6 +27,7 @@ export default function FormGroup({
 		<FormGroupContainer
 			setLabelAsPlaceholder={inputIsEmpty}
 			hasLabel={!!label}
+			className="form-group"
 			{...{
 				focused,
 				onFocusColor,
@@ -37,18 +40,21 @@ export default function FormGroup({
 					{(overridePlaceholder && inputIsEmpty && input.placeholder) || label}
 				</label>
 			) : null}
-			<input
-				{...input}
-				onChange={handleInputChange}
-				onFocus={() => {
-					setFocused(true);
-					setInputIsEmpty(false);
-				}}
-				onBlur={({ target }) => {
-					setFocused(false);
-					setInputIsEmpty(!target.value);
-				}}
-			/>
+			<div className="input-group">
+				<input
+					{...input}
+					onChange={handleInputChange}
+					onFocus={() => {
+						setFocused(true);
+						setInputIsEmpty(false);
+					}}
+					onBlur={({ target }) => {
+						setFocused(false);
+						setInputIsEmpty(!target.value);
+					}}
+				/>
+				{icon && icon}
+			</div>
 		</FormGroupContainer>
 	);
 }
@@ -70,7 +76,7 @@ const FormGroupContainer = styled.div`
 		top: ${(props) =>
 			props.setLabelAsPlaceholder ? "calc(var(--ifz) + var(--padt))" : "0"};
 		// font-size: ${(props) => (props.setLabelAsPlaceholder ? "1em" : ".9em")};
-		left: ${(props) => (!props.setLabelAsPlaceholder ? "0" : "var(--cpad)")};
+		// left: ${(props) => (!props.setLabelAsPlaceholder ? "0" : "var(--cpad)")};
 		color: ${(props) => (props.setLabelAsPlaceholder ? "#c4c4c4" : "#000")};
 		pointer-events: none;
 		transition-property: transform, font-size, top, left, color;
@@ -78,14 +84,22 @@ const FormGroupContainer = styled.div`
 		transition-timing-function: ease-in-out;
 	}
 
-	input {
-		outline: none;
-		border: none;
-		padding: var(--cpad);
-		font-size: var(--ifz);
+	.input-group {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: var(--cpad) 0;
 
-		&::placeholder {
-			visibility: ${(props) => (props.hasLabel ? "hidden" : "visible")};
+		input {
+			outline: none;
+			border: none;
+			font-size: var(--ifz);
+			flex-grow: 1;
+
+			&::placeholder {
+				visibility: ${(props) => (props.hasLabel ? "hidden" : "visible")};
+			}
 		}
 	}
+
 `;
