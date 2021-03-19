@@ -1,0 +1,10 @@
+export const artisBlue = "#3640f7";
+export const borderColor = "#ebebeb";
+export const artisAltBlue = "#0487d9";
+export const artisLightBlue = "#05c7f2";
+export const artisSalmon = "#ffd682";
+export const artisPurple = "#e144af";
+export const artisRed = "#ff6060";
+export const artisGrey = "#b1b1b1";
+export const artisLightGrey = "#ebebeb";
+export const safeGrey = "#6d6a6a";
