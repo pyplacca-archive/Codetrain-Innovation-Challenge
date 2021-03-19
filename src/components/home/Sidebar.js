@@ -10,15 +10,17 @@ export default function Sidebar() {
 
 	return (
 		<SidebarContainer>
-			<SidebarItem
-				title="Home"
-				icon={<Icons.Home className={setClass("/")} />}
-				onClick={() => navigate("/")}
-			/>
-			<SidebarItem
-				title="Profile"
-				icon={<Icons.Profile className={setClass("/profile")} />}
-			/>
+			<div className="apart">
+				<SidebarItem
+					title="Home"
+					icon={<Icons.Home className={setClass("/")} />}
+					onClick={() => navigate("/")}
+				/>
+				<SidebarItem
+					title="Profile"
+					icon={<Icons.Profile className={setClass("/profile")} />}
+				/>
+			</div>
 			<SidebarItem
 				title="Settings"
 				icon={<Icons.Settings className={setClass("/settings")} />}
@@ -35,7 +37,9 @@ function SidebarItem({ icon, title, ...props }) {
 const SidebarContainer = styled.ul`
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	padding: var(--pad-m);
+	padding-bottom: calc(var(--pad-l) + var(--pad-m));
 `;
 
 const SidebarItemContainer = styled.li`
