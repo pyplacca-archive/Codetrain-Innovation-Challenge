@@ -23,7 +23,10 @@ const PageContainer = styled.div`
 
 	.title {
 		font-size: 3rem;
-		font-weight: 600;
+		font-weight: 700;
+		font-size: 5rem;
+		-webkit-text-stroke: 3px #000;
+		-webkit-text-fill-color: transparent;
 	}
 
 	.sub-text {
