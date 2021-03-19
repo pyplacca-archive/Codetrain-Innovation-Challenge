@@ -23,7 +23,7 @@ export default function NotificationsMenu({ ...props }) {
 			</ul>
 			<div className="notifications-footer">
 				<span>
-					<Settings onClick={() => navigate("/settings")}/>
+					<Settings onClick={() => navigate("/settings")} size="1.2rem"/>
 				</span>
 				<p>All notifications</p>
 			</div>
@@ -43,10 +43,10 @@ function Notification({ title, eta, ...props }) {
 }
 
 const slideDownFadeIn = keyframes`
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 const MenuContainer = styled.div`
