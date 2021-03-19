@@ -8,7 +8,7 @@ export default function Navigation() {
 	const [showNotifications, setShowNotifications] = useState(false);
 	return (
 		<NavigationContainer>
-			<h3 className="nav-logo">Artis</h3>
+			<h1 className="nav-logo">Artis</h1>
 			<NavigationRight>
 				<Search />
 				<NavItem>
