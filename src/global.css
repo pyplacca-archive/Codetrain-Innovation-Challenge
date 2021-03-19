@@ -4,7 +4,8 @@
   --pad-s: .85rem;
   --pad-m: 1.2rem;
   --pad-l: 2.5rem;
-  --icon-size: 1.2rem;
+  --pad-xl: 4.2rem;
+  --icon-size: 1.7rem;
   /* colors */
   --border-color: #ebebeb;
   --artis-blue: #3640f7;
@@ -32,6 +33,7 @@ p,
 span,
 li,
 div,
+button,
 a {
   font-size: .9rem;
 }
