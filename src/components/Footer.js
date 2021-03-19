@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { navigate } from "@reach/router";
 
-export default function Footer({ alignment = "left", width="100vw" }) {
+export default function Footer({ alignment = "left", width="100vw", color }) {
 	// can either align items in the footer to the left, center or right
 	const alignmentOptions = {
 		left: "flex-start",
@@ -11,7 +11,7 @@ export default function Footer({ alignment = "left", width="100vw" }) {
 	const alignItems = alignmentOptions[alignment];
 
 	return (
-		<FooterContainer {...{ alignItems, width }}>
+		<FooterContainer {...{ alignItems, width, color }}>
 			<div className="footer-content">
 				<FooterLink text="About" href="/about" />
 				<FooterLink text="Help" href="/help" />
@@ -34,6 +34,10 @@ const FooterContainer = styled.div`
 		padding: 0.5rem;
 		display: flex;
 		align-items: center;
+
+		> * {
+			color: ${props => props.color || "var(--safe-grey)"}
+		}
 	}
 `;
 
@@ -46,7 +50,6 @@ function FooterLink({ text, href }) {
 }
 
 const FooterLinkContainer = styled.a`
-	color: grey;
 	text-decoration: none;
 	padding: 1em 1.5em;
 	font-size: 0.9rem;
