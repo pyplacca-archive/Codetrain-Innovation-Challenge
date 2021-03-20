@@ -100,3 +100,21 @@ export const VisibilityOff = (props) => {
 		</Svg>
 	)
 }
+
+export const Camera = (props) => {
+	return (
+		<Svg viewBox="0 0 20 18" {...props}>
+		  <g transform="translate(-2 -2)">
+		    <circle
+		    	cx="3.2"
+		    	cy="3.2"
+		    	r="3.2"
+		    	transform="translate(8.8 8.8)"
+		    />
+		    <path
+		    	d="M9,2,7.17,4H4A2.006,2.006,0,0,0,2,6V18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V6a2.006,2.006,0,0,0-2-2H16.83L15,2Zm3,15a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"
+		    />
+		  </g>
+		</Svg>
+	)
+}
