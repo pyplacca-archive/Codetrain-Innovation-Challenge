@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import { Camera } from "../Icons";
+import { AppContext } from "../../context";
 import avi from "../../assets/avatar.png";
 
 export default function ProfileAvatar (props) {
@@ -9,28 +10,41 @@ export default function ProfileAvatar (props) {
 			size: dimension of the avatar
 			editable: when this prop is set to true, photo upload is enabled
 	*/
-	const [photo, setPhoto] = useState(avi);
+	const {state, dispatch} = useContext(AppContext);
 
-	const uploadPhoto = () => {
-		window.showOpenFilePicker({})
-			.then(fileObject => {
-				const file = fileObject.getFile;
-				// const photoUrl = window.webkitURL.createObjectURL(file)
-				console.log({fileObject, file})
+	const uploadPhoto = async () => {
+		try {
+			const [fileHandle] = await window.showOpenFilePicker({
+				multiple: false,
+				excludeAcceptAllOption: true,
+				types: [{
+					accept: {
+						"image/*": [".jpeg", ".jpg", ".png", ".gif"]
+					},
+					description: "Images"
+				}]
+			});
+			const file = await fileHandle.getFile();
+			// generate an url for image so we can display it
+			const photoURL = window.webkitURL.createObjectURL(file)
+			// save uploaded photo to global state
+			dispatch({
+				type: "upload_photo",
+				payload: photoURL
 			})
-			.catch(err => {
-				console.log({err})
-			})
+		} catch(err) {
+			console.error(err)
+		}
 	}
 
 	return (
 		<AvatarContainer {...props}>
 			{ props.editable ? (
-				<button onClick={uploadPhoto}>
+				<button onClick={uploadPhoto} title="Upload photo">
 					<Camera size="1.2rem" color="#fff"/>
 				</button>
 			) : null}
-			<img src={photo} alt=""/>
+			<img src={state.avatar || avi} alt=""/>
 		</AvatarContainer>
 	)
 }
@@ -60,7 +74,7 @@ const AvatarContainer = styled.div`
 		align-items: center;
 		justify-content: center;
 		background-color: transparent;
-		backdrop-filter: blur(1.5px);
+		backdrop-filter: blur(1.5px) grayscale(.3);
 		pointer-events: none;
 		transition-property: backdrop-filter, opacity;
 		transition: all .2s ease-in-out;
