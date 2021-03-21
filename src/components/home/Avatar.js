@@ -29,8 +29,10 @@ export default function ProfileAvatar (props) {
 			const photoURL = window.webkitURL.createObjectURL(file)
 			// save uploaded photo to global state
 			dispatch({
-				type: "upload_photo",
-				payload: photoURL
+				type: "update_profile",
+				payload: {
+					avatar: photoURL
+				}
 			})
 		} catch(err) {
 			console.error(err)
@@ -44,7 +46,7 @@ export default function ProfileAvatar (props) {
 					<Camera size="1.2rem" color="#fff"/>
 				</button>
 			) : null}
-			<img src={state.avatar || avi} alt=""/>
+			<img src={state.profile.avatar || avi} alt=""/>
 		</AvatarContainer>
 	)
 }
