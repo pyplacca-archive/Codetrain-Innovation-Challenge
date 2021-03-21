@@ -28,6 +28,7 @@ const LayoutBottom = styled.div`
 
 const LayoutBottomRight = styled.div`
 	padding: var(--pad-s);
-	// background-color: #ebebeb;
+	background-color: #f6f6f6;
+	margin: 0 var(--pad-l) var(--pad-l) 0;
 	border-radius: 20px;
 `;
