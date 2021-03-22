@@ -2,8 +2,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import { navigate } from "@reach/router";
 import { Icons } from "../";
+import ProfileMenu from "../sidebar/Profile";
 
 export default function Sidebar() {
+	const [showProfileMenu, setShowProfileMenu] = useState(false);
+
 	const setClass = (route) => {
 		return window.location.pathname === route ? "active" : "outlined";
 	};
@@ -11,27 +14,36 @@ export default function Sidebar() {
 	return (
 		<SidebarContainer>
 			<div className="apart">
-				<SidebarItem
-					title="Home"
-					icon={<Icons.Home className={setClass("/")} />}
-					onClick={() => navigate("/")}
-				/>
-				<SidebarItem
-					title="Profile"
-					icon={<Icons.Profile className={setClass("/profile")} />}
-				/>
+				<SidebarItem title="Home" onClick={() => navigate("/")}>
+					<Icons.Home className={setClass("/")} />
+				</SidebarItem>
+				<SidebarItem title="Profile">
+					<Icons.Profile
+						className={setClass("/profile")}
+						onClick={() => setShowProfileMenu(!showProfileMenu)}
+					/>
+					{ showProfileMenu ? (
+						<ProfileMenu
+							style={{
+								position: "absolute",
+								top: "calc(var(--pad-m) * -1)",
+								left: "calc(100% + var(--pad-m))",
+								zIndex: 10,
+								backgroundColor: "#fff",
+							}}
+						/>
+					) : null}
+				</SidebarItem>
 			</div>
-			<SidebarItem
-				title="Settings"
-				icon={<Icons.Settings className={setClass("/settings")} />}
-				onClick={() => navigate("/settings")}
-			/>
+			<SidebarItem title="Settings" onClick={() => navigate("/settings")}>
+				<Icons.Settings className={setClass("/settings")} />
+			</SidebarItem>
 		</SidebarContainer>
 	);
 }
 
-function SidebarItem({ icon, title, ...props }) {
-	return <SidebarItemContainer {...props}>{icon}</SidebarItemContainer>;
+function SidebarItem({ children, title, ...props }) {
+	return <SidebarItemContainer {...props}>{children}</SidebarItemContainer>;
 }
 
 const SidebarContainer = styled.ul`
@@ -44,4 +56,5 @@ const SidebarContainer = styled.ul`
 
 const SidebarItemContainer = styled.li`
 	padding: var(--pad-m) 0;
+	position: relative;
 `;
