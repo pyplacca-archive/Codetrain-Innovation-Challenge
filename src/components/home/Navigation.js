@@ -27,7 +27,7 @@ export default function Navigation() {
 						<NotificationsMenu
 							style={{
 								position: "absolute",
-								top: "2.5rem",
+								top: "3rem",
 								right: 0,
 							}}
 						/>
