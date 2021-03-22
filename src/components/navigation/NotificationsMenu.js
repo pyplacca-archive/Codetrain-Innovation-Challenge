@@ -53,7 +53,7 @@ const MenuContainer = styled.div`
 	width: clamp(220px, 50vw, 360px);
 	background-color: #fff;
 	border-radius: 0.5rem;
-	box-shadow: 0px 0px 9px #d2d2d2;
+	box-shadow: 0px 0px 9px var(--shadow-color);
 	overflow: hidden;
 	opacity: 0;
 	transform: translateY(-1.5rem);
