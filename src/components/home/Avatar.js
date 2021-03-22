@@ -40,7 +40,7 @@ export default function ProfileAvatar (props) {
 	}
 
 	return (
-		<AvatarContainer {...props}>
+		<AvatarContainer className="avatar" {...props}>
 			{ props.editable ? (
 				<button onClick={uploadPhoto} title="Upload photo">
 					<Camera size="1.2rem" color="#fff"/>
