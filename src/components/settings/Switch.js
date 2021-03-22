@@ -11,7 +11,7 @@ const Switch = styled.button`
 	height: var(--size);
 	border-radius: var(--size);
 	position: relative;
-	background-color: var(${props => !props.isOn ? "--artis-light-grey" : "--artis-purple"});
+	background-color: var(${props => !props.isOn ? "--artis-light-grey" : "--artis-blue"});
 	display: flex;
 	align-items: center;
 	cursor: pointer;
