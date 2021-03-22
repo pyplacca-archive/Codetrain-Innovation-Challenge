@@ -71,10 +71,10 @@ const InfoContainer = styled.div`
 		input {
 			// color: var(--artis-purple);
 			color: red;
+			background-color: transparent;
 
 			&[disabled] {
 				color: var(--artis-grey);
-				background-color: transparent;
 			}
 		}
 	}
