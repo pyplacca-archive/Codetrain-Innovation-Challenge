@@ -68,10 +68,10 @@ export default function Settings() {
 									['playSound', "Play a sound when I get a notification"],
 									["desktop", "Desktop notification"],
 									["tagsIDontFollow", "Notify me on tags I don't follow"]
-								].map(pref => {
+								].map((pref, i) => {
 									const [key, description] = pref;
 									return (
-										<div className="preference">
+										<div className="preference" key={i}>
 											<Switch
 												onClick={toggleNotificationPreference(key)}
 												isOn={!!notification[key]}
