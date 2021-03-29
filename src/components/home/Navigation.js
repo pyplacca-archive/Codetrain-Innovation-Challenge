@@ -10,7 +10,7 @@ export default function Navigation() {
 		<NavigationContainer>
 			<h1 className="nav-logo">Artis</h1>
 			<NavigationRight>
-				<Search />
+				{/*<Search />*/}
 				<NavItem>
 					<Cart />
 				</NavItem>
