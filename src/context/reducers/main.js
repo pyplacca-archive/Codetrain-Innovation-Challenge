@@ -7,7 +7,8 @@ export const initialAppState = {
 	},
 	preferences: {
 		notification: {},
-	}
+	},
+	selectedProduct: {},
 };
 
 export function appReducer(state, action) {
@@ -32,6 +33,26 @@ export function appReducer(state, action) {
 						...payload
 					}
 				}
+			}
+
+		case "preview_product":
+			return {
+				...state,
+				selectedProduct: payload
+			}
+
+		case "add_to_cart":
+			// expects an object as payload
+			return {
+				...state,
+				cart: [...state.cart, payload]
+			}
+
+		case "remove_from_cart":
+			// expects an id as payload
+			return {
+				...state,
+				cart: state.cart.filter(item => item.id !== payload)
 			}
 
 		default: return state;
