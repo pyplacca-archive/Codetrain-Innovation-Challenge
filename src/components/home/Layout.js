@@ -15,7 +15,7 @@ export default function Layout({ children, ...props }) {
 
 	const handleShowPreview = () => {
 		setShowPreview(
-			window.location.pathname === '/' && selectedProduct
+			window.location.pathname === '/' && selectedProduct.id
 		)
 	}
 
