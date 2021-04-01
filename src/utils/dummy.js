@@ -1,4 +1,5 @@
 export const data = [
+// 	use this first object as an example to add more data to this file
 	{
 		name: 'Cardboard',
 		price: 10.00,
