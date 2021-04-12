@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import styled from "styled-components";
+import { navigate } from "@reach/router";
 import Search from "./Search";
 import { Bell, Cart } from "../Icons";
 import { Badge } from "../";
@@ -10,7 +11,7 @@ export default function Navigation() {
 	const { state } = useContext(AppContext);
 	const [showNotifications, setShowNotifications] = useState(false);
 
-	const notificationCount = state.preferences.notifications.length;
+	const notificationCount = state.notifications.length;
 	const cartCount = state?.cart?.length;
 
 	return (
@@ -19,7 +20,7 @@ export default function Navigation() {
 			<NavigationRight>
 				{/*<Search />*/}
 				<NavItem>
-					<Cart />
+					<Cart onClick={() => navigate("/cart")}/>
 					{cartCount ? (
 						<Badge style={badgeStyle} value={cartCount} />
 					) : null}
