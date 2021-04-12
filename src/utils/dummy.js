@@ -1,6 +1,8 @@
 export const data = [
+// 	use this first object as an example to add more data to this file
 	{
 		name: 'Cardboard',
+		image: null,
 		price: 10.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
