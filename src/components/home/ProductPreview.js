@@ -1,17 +1,28 @@
-// import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { BtnRegular } from '../Buttons';
-// import { AppContext } from '../../context';
+import { AppContext } from '../../context';
 
-export default function Preview({show, product, ...props}) {
-	// const { state: { selectedProduct: product } } = useContext(AppContext);
+export default function Preview() {
+	const { state: { product } } = useContext(AppContext);
+	const [showPreview, setShowPreview] = useState(false);
 
-	return (
-		<PreviewContainer {...{show, ...props}}>
+	useEffect(() => {
+		setShowPreview(product && window.location.pathname === "/");
+	}, [product])
+
+	// const closePreview = () => {
+	// 	setShowPreview(false);
+	// }
+
+	return showPreview ? (
+		<PreviewContainer>
 			<div className="preview-container-inner">
 				<img src={product?.image} alt=""/>
 				<h2 className='preview--product-name'>{ product?.name }</h2>
-				<h4 className='preview--product-price'>GHC { product?.price?.toFixed(2) }</h4>
+				<h4 className='preview--product-price'>
+					GHC { product?.price?.toFixed(2) }
+				</h4>
 				<p className="preview--title">Description</p>
 				<p>{ product?.description }</p>
 				<p className="preview--title">Seller</p>
@@ -19,22 +30,26 @@ export default function Preview({show, product, ...props}) {
 				<p className="preview--title">Tags</p>
 				<p>{ product?.tags?.join(', ') }</p>
 				<div className="buttons">
-					<BtnRegular style={{backgroundColor: "green"}}>Buy now</BtnRegular>
+					<BtnRegular style={{backgroundColor: "green"}}>
+						Buy now
+					</BtnRegular>
 					<BtnRegular>Add to cart</BtnRegular>
 				</div>
 			</div>
 		</PreviewContainer>
-	)
+	) : null
 }
 
 const PreviewContainer = styled.article`
-	padding: ${props => props.show ? "var(--pad-s)" : "0px"};
+	// padding: ${props => props.show ? "var(--pad-s)" : "0px"};
+	padding: var(--pad-s);
 	// margin-bottom: ${props => props.show ? "var(--pad-l)" : "0px"};
 	margin-bottom: var(--pad-l);
 	// margin-right: ${props => props.show ? "var(--pad-l)" : "0px"};
 	margin-right: var(--pad-l);
 	overflow: hidden;
-	width: ${props => props.show ? "350px" : "0px"};
+	// width: ${props => props.show ? "350px" : "0px"};
+	width: 350px;
 	height: 100%;
 	// width: 0px;
 	transition-property: width;
