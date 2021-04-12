@@ -34,7 +34,7 @@ const ProfileMenuContainer = styled.div`
 	overflow: hidden;
 	border-radius: 1rem;
 	width: 235px;
-	box-shadow: 0 1px 9px var(--shadow-color);
+	box-shadow: 0 0px 12px var(--artis-grey);
 	cursor: default;
 	opacity: 0;
 	transform: translateX(-1.5rem);
