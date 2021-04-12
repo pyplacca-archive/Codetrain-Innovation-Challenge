@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import Search from "./Search";
 import { Bell, Cart } from "../Icons";
+import { Badge } from "../";
 import { NotificationsMenu } from "../navigation";
+import { AppContext } from "../../context";
 
 export default function Navigation() {
+	const { state } = useContext(AppContext);
 	const [showNotifications, setShowNotifications] = useState(false);
+
+	const notificationCount = state.preferences.notifications.length;
+	const cartCount = state?.cart?.length;
+
 	return (
 		<NavigationContainer>
 			<h1 className="nav-logo">Artis</h1>
@@ -13,6 +20,9 @@ export default function Navigation() {
 				{/*<Search />*/}
 				<NavItem>
 					<Cart />
+					{cartCount ? (
+						<Badge style={badgeStyle} value={cartCount} />
+					) : null}
 				</NavItem>
 				<NavItem
 					onClick={() => setShowNotifications(!showNotifications)}
@@ -23,12 +33,15 @@ export default function Navigation() {
 					}}
 				>
 					<Bell />
+					{notificationCount ? (
+						<Badge style={badgeStyle} value={notificationCount}/>
+					) : null}
 					{showNotifications ? (
 						<NotificationsMenu
 							style={{
 								position: "absolute",
 								top: "3rem",
-								right: 0,
+								right: "1.5rem",
 							}}
 						/>
 					) : null}
@@ -36,6 +49,12 @@ export default function Navigation() {
 			</NavigationRight>
 		</NavigationContainer>
 	);
+}
+
+const badgeStyle = {
+	position: "absolute",
+	top: "0",
+	right: "0",
 }
 
 function NavItem({ icon, children, ...props }) {
