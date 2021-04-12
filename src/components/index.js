@@ -18,9 +18,9 @@ function Link ({to, children, ...props}) {
 	)
 }
 
-function Badge({value, color}) {
+function Badge({value, color, ...props}) {
 	return (
-		<BadgeContainer color={color}>
+		<BadgeContainer color={color} {...props}>
 			{ value > 9 ? '9+' : value }
 		</BadgeContainer>
 	)
@@ -37,8 +37,8 @@ const LinkContainer = styled.span`
 `;
 
 const BadgeContainer = styled.span`
-	--fsz: .9rem;
-	--size: calc(var(--fsz) + var(--pad-s) * 2);
+	--fsz: .7rem;
+	--size: calc(var(--fsz) + 10px);
 	font-size: var(--fsz);
 	height: var(--size);
 	width: var(--size);
@@ -46,7 +46,8 @@ const BadgeContainer = styled.span`
 	align-items: center;
 	justify-content: center;
 	color: #fff;
-	background-color: ${props => props.color || "var(--artis-blue)"};
+	border-radius: 50%;
+	background-color: ${props => props.color || "red"};
 `;
 
 export {
