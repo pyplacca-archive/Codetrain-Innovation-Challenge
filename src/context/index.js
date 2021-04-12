@@ -7,12 +7,7 @@ const AppProvider = (props) => {
 	const [state, dispatch] = useReducer(appReducer, initialAppState);
 
 	return (
-		<AppContext.Provider
-			value={{
-				state,
-				dispatch,
-			}}
-		>
+		<AppContext.Provider value={{ state, dispatch }}>
 			{props.children}
 		</AppContext.Provider>
 	);
