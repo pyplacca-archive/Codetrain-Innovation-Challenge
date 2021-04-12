@@ -4,12 +4,19 @@ import { BtnRegular } from '../Buttons';
 import { AppContext } from '../../context';
 
 export default function Preview() {
-	const { state: { product } } = useContext(AppContext);
+	const { state: { product }, dispatch } = useContext(AppContext);
 	const [showPreview, setShowPreview] = useState(false);
 
 	useEffect(() => {
 		setShowPreview(product && window.location.pathname === "/");
 	}, [product])
+
+	const addToCart = () => {
+		dispatch({
+			type: "add_to_cart",
+			payload: product.id,
+		})
+	}
 
 	// const closePreview = () => {
 	// 	setShowPreview(false);
@@ -33,7 +40,7 @@ export default function Preview() {
 					<BtnRegular style={{backgroundColor: "green"}}>
 						Buy now
 					</BtnRegular>
-					<BtnRegular>Add to cart</BtnRegular>
+					<BtnRegular onClick={addToCart}>Add to cart</BtnRegular>
 				</div>
 			</div>
 		</PreviewContainer>
