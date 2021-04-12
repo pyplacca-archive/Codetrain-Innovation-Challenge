@@ -1,5 +1,5 @@
 import { Router } from "@reach/router";
-import { PageNotFound, Home, Settings } from "./pages";
+import { PageNotFound, Home, Settings, Notifications } from "./pages";
 import { Login, Signup } from './pages/auth';
 
 export default function AppRouter() {
@@ -10,6 +10,7 @@ export default function AppRouter() {
 			<Login path="/login"/>
 			<Home path="/" />
 			<Settings path="/settings" />
+			<Notifications path="/notifications"/>
 		</Router>
 	);
 }
