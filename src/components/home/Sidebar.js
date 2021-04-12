@@ -47,6 +47,7 @@ function SidebarItem({ children, title, ...props }) {
 }
 
 const SidebarContainer = styled.ul`
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

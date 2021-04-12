@@ -10,26 +10,13 @@ export default function Layout({ children, ...props }) {
 	const { state: { selectedProduct } } = useContext(AppContext);
 	const [showPreview, setShowPreview] = useState(true);
 
-	useEffect(() => { handleShowPreview() }, [])
-	useEffect(() => { handleShowPreview() }, [selectedProduct])
-
-	const handleShowPreview = () => {
-		setShowPreview(
-			window.location.pathname === '/' && selectedProduct.id
-		)
-	}
-
-
 	return (
 		<LayoutContainer>
 			<Navigation />
 			<LayoutBottom>
 				<Sidebar />
 				<LayoutBottomRight>{children}</LayoutBottomRight>
-				<Preview
-					product={selectedProduct}
-					show={showPreview}
-				/>
+				<Preview/>
 			</LayoutBottom>
 		</LayoutContainer>
 	);
@@ -47,6 +34,7 @@ const LayoutBottom = styled.div`
 	grid-template-columns: auto 1fr auto;
 	overflow-y: hidden;
 	width: 100%;
+	align-items: flex-start;
 `;
 
 const LayoutBottomRight = styled.div`
