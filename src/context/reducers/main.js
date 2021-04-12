@@ -6,9 +6,11 @@ export const initialAppState = {
 		mobile: "+1 23 456 7890",
 	},
 	preferences: {
-		notification: {},
+		notifications: [
+			// {title: null, eta: null}
+		],
 	},
-	selectedProduct: {},
+	product: null,
 };
 
 export function appReducer(state, action) {
@@ -36,9 +38,10 @@ export function appReducer(state, action) {
 			}
 
 		case "preview_product":
+			// expects an object as payload
 			return {
 				...state,
-				selectedProduct: payload
+				product: payload
 			}
 
 		case "add_to_cart":
