@@ -12,7 +12,7 @@ export default function CartScreen() {
 	return (
 		<Layout>
 			<CartContainer>
-				<h1>Cart</h1>
+				<h2>Cart</h2>
 				{
 					!cart.length ? (
 						<Blank>You have no items in your cart</Blank>
@@ -31,7 +31,7 @@ export default function CartScreen() {
 }
 
 const CartContainer = styled.div`
-	h1 {
+	h2 {
 		margin-bottom: 1.5rem;
 	}
 `;
