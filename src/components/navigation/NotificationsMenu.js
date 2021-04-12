@@ -1,31 +1,41 @@
+import { useContext } from "react";
 import styled, { keyframes } from "styled-components";
 import { navigate } from "@reach/router";
 import Blank from "../Blank";
 import { Settings } from "../Icons";
+import { AppContext } from "../../context";
 
 export default function NotificationsMenu({ ...props }) {
+	const { state: { preferences: { notifications } } } = useContext(AppContext);
+
 	return (
 		<MenuContainer {...props}>
 			<h4 className="menu-title">Notifications</h4>
 			<ul className="notification-list">
-				{/* <Blank
-					style={{
-						color: "var(--safe-grey)",
-						fontWeight: "300",
-						fontSize: ".9em",
-						minHeight: "100px",
-					}}
-				>
-					You've got no notifications
-				</Blank> */}
-				<Notification title="Artis app under development" eta="Now" />
-				<Notification title="Test notification" eta="1 hour ago" />
+				{
+					notifications.length ? (
+						notifications.slice(0, 10).map(notification => (
+							<Notification {...notification} />
+						))
+					) : (
+						<Blank
+							style={{
+								color: "var(--safe-grey)",
+								fontWeight: "300",
+								fontSize: ".9em",
+								minHeight: "100px",
+							}}
+						>
+							You've got no notifications
+						</Blank>
+					)
+				}
 			</ul>
 			<div className="notifications-footer">
 				<span>
 					<Settings onClick={() => navigate("/settings")} size="1.2rem"/>
 				</span>
-				<p>All notifications</p>
+				<p onClick={() => navigate("/notifications")}>All notifications</p>
 			</div>
 		</MenuContainer>
 	);
@@ -53,7 +63,7 @@ const MenuContainer = styled.div`
 	width: clamp(220px, 50vw, 360px);
 	background-color: #fff;
 	border-radius: 0.5rem;
-	box-shadow: 0px 0px 9px var(--shadow-color);
+	box-shadow: 0px 0px 12px var(--artis-grey);
 	overflow: hidden;
 	opacity: 0;
 	transform: translateY(-1.5rem);
