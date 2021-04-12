@@ -6,7 +6,7 @@ import { Settings } from "../Icons";
 import { AppContext } from "../../context";
 
 export default function NotificationsMenu({ ...props }) {
-	const { state: { preferences: { notifications } } } = useContext(AppContext);
+	const { state: { notifications } } = useContext(AppContext);
 
 	return (
 		<MenuContainer {...props}>
