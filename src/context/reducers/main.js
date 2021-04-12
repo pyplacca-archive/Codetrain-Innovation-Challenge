@@ -6,11 +6,13 @@ export const initialAppState = {
 		mobile: "+1 23 456 7890",
 	},
 	preferences: {
-		notifications: [
-			// {title: null, eta: null}
-		],
+		notification: {},
 	},
+	notifications: [
+		// {title: null, eta: null}
+	],
 	product: null,
+	cart: [],
 };
 
 export function appReducer(state, action) {
