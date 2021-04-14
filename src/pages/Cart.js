@@ -18,12 +18,19 @@ export default function CartScreen() {
 		}
 	}
 
+	const proceedToPayment = () => {
+		dispatch({
+			type: "open_modal",
+			payload: "checkout"
+		})
+	}
+
 	return (
 		<Layout>
 			<CartContainer>
 				<div>
 					<h1>Cart</h1>
-					<button>Proceed to payment</button>
+					{cart.length ? <button onClick={proceedToPayment}>Proceed to payment</button> : null}
 				</div>
 				{
 					!cart.length ? (
