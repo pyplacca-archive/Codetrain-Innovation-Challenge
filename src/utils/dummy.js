@@ -2,7 +2,7 @@ export const data = [
 // 	use this first object as an example to add more data to this file
 	{
 		name: 'Drawing Board',
-		image: require('../assets/ProjectImages/Drafting_board_with_T_Square.jpg'),
+		image: require('../ProjectImage/Drafting_board_with_T_Square.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -20,7 +20,7 @@ export const data = [
 
 	{
 		name: '10-Pack Crayons',
-		image: require('../assets/ProjectImages/10 crayons.jpg'),
+		image: require('../ProjectImages/10 crayons.jpg'),
 		price: 10.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -36,7 +36,7 @@ export const data = [
 
 	{
 		name: 'A Plus Physics Past Questions',
-		image: require('../assets/ProjectImages/a+ physics past questions.jpg'),
+		image: require('../ProjectImages/a+ physics past questions.jpg'),
 		price: 10.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -52,7 +52,7 @@ export const data = [
 
 	{
 		name: '100 Crayola Color Pencils',
-		image: require('../assets/ProjectImages/crayola pencils.jpg'),
+		image: require('../ProjectImages/crayola pencils.jpg'),
 		price: 20.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -68,7 +68,7 @@ export const data = [
 
 	{
 		name: 'Hot Glue Gun',
-		image: require('../assets/ProjectImages/Stanley-Hot-Glue-Gun-GR35K.jpg'),
+		image: require('../ProjectImages/Stanley-Hot-Glue-Gun-GR35K.jpg'),
 		price: 15.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -84,7 +84,7 @@ export const data = [
 
 	{
 		name: 'Set Square',
-		image: require('../assets/ProjectImages/set square.jpg'),
+		image: require('../ProjectImages/set square.jpg'),
 		price: 8.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -101,7 +101,7 @@ export const data = [
 
 	{
 		name: '12 Crayola Crayons',
-		image: require('../assets/ProjectImages/12 crayola crayons.jpg'),
+		image: require('../ProjectImages/12 crayola crayons.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -118,7 +118,7 @@ export const data = [
 
 	{
 		name: 'Elmers White Glue',
-		image: require('../assets/ProjectImages/white glue.jpg'),
+		image: require('../ProjectImages/white glue.jpg'),
 		price: 4.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -134,7 +134,7 @@ export const data = [
 
 	{
 		name: 'No Sweetness Here',
-		image: require('../assets/ProjectImages/no sweetness here.jpg'),
+		image: require('../ProjectImages/no sweetness here.jpg'),
 		price: 7.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -151,7 +151,7 @@ export const data = [
 
 	{
 		name: 'Nataraj 621 Pencil',
-		image: require('../assets/ProjectImages/621-pencil-Nataraj.jpg'),
+		image: require('../ProjectImages/621-pencil-Nataraj.jpg'),
 		price: 5.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -167,7 +167,7 @@ export const data = [
 	},
 	{
 		name: 'White Drawing Board',
-		image: require('../assets/ProjectImages/Drawing-Board-T-Square.jpg'),
+		image: require('../ProjectImages/Drawing-Board-T-Square.jpg'),
 		price: 11.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -184,7 +184,7 @@ export const data = [
 
 	{
 		name: 'Multicolored Clips',
-		image: require('../assets/ProjectImages/Retro-Color-Gold-Brass-Metal-Paper-Clips-Binder-Clips-Clamps-Office-School-Stationery-Paper-Document-Clips.jpg'),
+		image: require('../ProjectImages/Retro-Color-Gold-Brass-Metal-Paper-Clips-Binder-Clips-Clamps-Office-School-Stationery-Paper-Document-Clips.jpg'),
 		price: 6.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -201,7 +201,7 @@ export const data = [
 
 	{
 		name: 'Dong-A Poster Colors',
-		image: require('../assets/ProjectImages/poster colors dong-a.jpg'),
+		image: require('../ProjectImages/poster colors dong-a.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -217,7 +217,7 @@ export const data = [
 
 	{
 		name: 'Kovs Series Chemistry Textbook',
-		image: require('../assets/ProjectImages/kovs chem.jpg'),
+		image: require('../ProjectImages/kovs chem.jpg'),
 		price: 15.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -234,7 +234,7 @@ export const data = [
 
 	{
 		name: 'Marshal Mathset',
-		image: require('../assets/ProjectImages/mathset original.jpg'),
+		image: require('../ProjectImages/mathset original.jpg'),
 		price: 5.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -250,7 +250,7 @@ export const data = [
 
 	{
 		name: 'Wire Frame Clips',
-		image: require('../assets/ProjectImages/gold clips.jpg'),
+		image: require('../ProjectImages/gold clips.jpg'),
 		price: 10.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -266,7 +266,7 @@ export const data = [
 
 	{
 		name: 'Red Nataraj  Mathset',
-		image: require('../assets/ProjectImages/mathset black.jpg'),
+		image: require('../ProjectImages/mathset black.jpg'),
 		price: 5.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -282,7 +282,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola Integrated Science (SHS)',
-		image: require('../assets/ProjectImages/aki ola inte sci shs.jpg'),
+		image: require('../ProjectImages/aki ola inte sci shs.jpg'),
 		price: 15.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -298,7 +298,7 @@ export const data = [
 
 	{
 		name: 'Elmers School Glue',
-		image: require('../assets/ProjectImages/elmers school glue.jpg'),
+		image: require('../ProjectImages/elmers school glue.jpg'),
 		price: 4.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -314,7 +314,7 @@ export const data = [
 
 	{
 		name: 'Drawing Board',
-		image: require('../assets/ProjectImages/drawing board.jpg'),
+		image: require('../ProjectImages/drawing board.jpg'),
 		price: 8.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -346,7 +346,7 @@ export const data = [
 
 	{
 		name: 'Standard Metal Clips',
-		image: require('../assets/ProjectImages/metal clips.jpg'),
+		image: require('../ProjectImages/metal clips.jpg'),
 		price: 2.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -362,7 +362,7 @@ export const data = [
 
 	{
 		name: 'Nataraj Eraser',
-		image: require('../assets/ProjectImages/nataraj eraser.jpg'),
+		image: require('../ProjectImages/nataraj eraser.jpg'),
 		price: 0.50,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -378,7 +378,7 @@ export const data = [
 
 	{
 		name: 'Nataraj 621 Pencil Pack',
-		image: require('../assets/ProjectImages/nataraj pencil pack redblack.jpg'),
+		image: require('../ProjectImages/nataraj pencil pack redblack.jpg'),
 		price: 5.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -394,7 +394,7 @@ export const data = [
 
 	{
 		name: 'B.D.T. Textbook (JHS)',
-		image: require('../assets/ProjectImages/AKI-OLA-SERIES-BASIC-DESIGN-AND-TECHNOLOGY-1.jpg'),
+		image: require('../ProjectImages/AKI-OLA-SERIES-BASIC-DESIGN-AND-TECHNOLOGY-1.jpg'),
 		price: 10.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -411,7 +411,7 @@ export const data = [
 
 	{
 		name: 'Paintbrush Set',
-		image: require('../assets/ProjectImages/paintbrush alt.jpg'),
+		image: require('../ProjectImages/paintbrush alt.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -428,7 +428,7 @@ export const data = [
 
 	{
 		name: 'ICT for JHS 3',
-		image: require('../assets/ProjectImages/AKI-OLA-SERIES-ICT-FOR-J.H.S-3.jpg'),
+		image: require('../ProjectImages/AKI-OLA-SERIES-ICT-FOR-J.H.S-3.jpg'),
 		price: 8.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -445,7 +445,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola English Language PAst Questions',
-		image: require('../assets/ProjectImages/English-Language-for-JHS-123-AKI-OLA.jpg'),
+		image: require('../ProjectImages/English-Language-for-JHS-123-AKI-OLA.jpg'),
 		price: 8.50,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -462,7 +462,7 @@ export const data = [
 
 	{
 		name: 'SARPS Chemistry Textbook',
-		image: require('../assets/ProjectImages/sarps chemistry.jpg'),
+		image: require('../ProjectImages/sarps chemistry.jpg'),
 		price: 20.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -479,7 +479,7 @@ export const data = [
 
 	{
 		name: 'Super Marshal Set',
-		image: require('../assets/ProjectImages/Super-Marshal-Mathset.jpg'),
+		image: require('../ProjectImages/Super-Marshal-Mathset.jpg'),
 		price: 5.50,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -495,7 +495,7 @@ export const data = [
 
 	{
 		name: 'Crayola 24 Colored Pencils',
-		image: require('../assets/ProjectImages/color pencils.jpg'),
+		image: require('../ProjectImages/color pencils.jpg'),
 		price: 11.80,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -511,7 +511,7 @@ export const data = [
 
 	{
 		name: 'A Plus Core Maths Past Questions (SHS)',
-		image: require('../assets/ProjectImages/A-CORE-MATHS-SHS-QA.jpg'),
+		image: require('../ProjectImages/A-CORE-MATHS-SHS-QA.jpg'),
 		price: 14.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -528,7 +528,7 @@ export const data = [
 
 	{
 		name: 'Nataraj Color Pencils Big Size',
-		image: require('../assets/ProjectImages/Nataraj-Colour-pencil-Big-Size.jpg'),
+		image: require('../ProjectImages/Nataraj-Colour-pencil-Big-Size.jpg'),
 		price: 15.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -544,7 +544,7 @@ export const data = [
 
 	{
 		name: 'Black Stapler',
-		image: require('../assets/ProjectImages/black stapler.jpg'),
+		image: require('../ProjectImages/black stapler.jpg'),
 		price: 15.60,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -560,7 +560,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola English Past Questions',
-		image: require('../assets/ProjectImages/English-Language-for-JHS-123-QA-AKI-OLA.jpg'),
+		image: require('../ProjectImages/English-Language-for-JHS-123-QA-AKI-OLA.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -577,7 +577,7 @@ export const data = [
 
 	{
 		name: 'Glue Stick',
-		image: require('../assets/ProjectImages/glue stic.jpg'),
+		image: require('../ProjectImages/glue stic.jpg'),
 		price: 4.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -593,7 +593,7 @@ export const data = [
 
 	{
 		name: 'Flamingo for Social Studies',
-		image: require('../assets/ProjectImages/Social-Studies-for-JHS-123-Flamingo.jpg'),
+		image: require('../ProjectImages/Social-Studies-for-JHS-123-Flamingo.jpg'),
 		price: 15.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -610,7 +610,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola Integrated Science (JHS)',
-		image: require('../assets/ProjectImages/New-Integrated-Science-for-JHS-Aki-ola.jpg'),
+		image: require('../ProjectImages/New-Integrated-Science-for-JHS-Aki-ola.jpg'),
 		price: 10.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -627,7 +627,7 @@ export const data = [
 
 	{
 		name: 'Mini Stapler',
-		image: require('../assets/ProjectImages/mini stapler.jpg'),
+		image: require('../ProjectImages/mini stapler.jpg'),
 		price: 9.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -643,7 +643,7 @@ export const data = [
 
 	{
 		name: 'Sakura Poster Colors',
-		image: require('../assets/ProjectImages/poster colors.jpg'),
+		image: require('../ProjectImages/poster colors.jpg'),
 		price: 13.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -659,7 +659,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola Mathematics (JHS)',
-		image: require('../assets/ProjectImages/aki ola maths jhs.jpg'),
+		image: require('../ProjectImages/aki ola maths jhs.jpg'),
 		price: 20.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -676,7 +676,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola Social Studies',
-		image: require('../assets/ProjectImages/aki ola social jhs.jpg'),
+		image: require('../ProjectImages/aki ola social jhs.jpg'),
 		price: 15.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -692,7 +692,7 @@ export const data = [
 
 	{
 		name: 'Nataraj Pens (Full Box)',
-		image: require('../assets/ProjectImages/nataraj pen black.jpg'),
+		image: require('../ProjectImages/nataraj pen black.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -708,7 +708,7 @@ export const data = [
 
 	{
 		name: 'Buncho POster Colors',
-		image: require('../assets/ProjectImages/poster colors buncho.jpg'),
+		image: require('../ProjectImages/poster colors buncho.jpg'),
 		price: 16.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -724,7 +724,7 @@ export const data = [
 
 	{
 		name: 'Metal Clip',
-		image: require('../assets/ProjectImages/metal clip.jpg_Q90.jpg_.jpg'),
+		image: require('../ProjectImages/metal clip.jpg_Q90.jpg_.jpg'),
 		price: 1.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -741,7 +741,7 @@ export const data = [
 
 	{
 		name: 'Aki Ola Intregated Science Past Questions',
-		image: require('../assets/ProjectImages/Akiola-integrated-science-jhs-questions-and-answers.jpg'),
+		image: require('../ProjectImages/Akiola-integrated-science-jhs-questions-and-answers.jpg'),
 		price: 12.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -757,7 +757,7 @@ export const data = [
 
 	{
 		name: 'T Square',
-		image: require('../assets/ProjectImages/t square.jpg'),
+		image: require('../ProjectImages/t square.jpg'),
 		price: 9.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -773,7 +773,7 @@ export const data = [
 
 	{
 		name: 'Nataraj School Set',
-		image: require('../assets/ProjectImages/school.jpg'),
+		image: require('../ProjectImages/school.jpg'),
 		price: 13.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -789,7 +789,7 @@ export const data = [
 
 	{
 		name: 'White Paintbrush Set',
-		image: require('../assets/ProjectImages/paintbrush.jpg'),
+		image: require('../ProjectImages/paintbrush.jpg'),
 		price: 16.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -805,7 +805,7 @@ export const data = [
 
 	{
 		name: 'Nataraj Pencil Set Pack (with Eraser & Sharpener)',
-		image: require('../assets/ProjectImages/nataraj pencil pack redblack alt.jpg'),
+		image: require('../ProjectImages/nataraj pencil pack redblack alt.jpg'),
 		price: 5.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -821,7 +821,7 @@ export const data = [
 
 	{
 		name: 'Transparent Set Square Set',
-		image: require('../assets/ProjectImages/set square alt.jpg'),
+		image: require('../ProjectImages/set square alt.jpg'),
 		price: 11.00,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
@@ -837,7 +837,7 @@ export const data = [
 
 	{
 		name: 'Nataraj Construct (Mathset)',
-		image: require('../assets/ProjectImages/mathset red.jpg'),
+		image: require('../ProjectImages/mathset red.jpg'),
 		price: 5.50,
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, doloribus, corrupti! Quis, facilis. Quibusdam in quaerat libero, odio itaque quia expedita dignissimos excepturi! Odit, nihil.null',
 		seller: {
