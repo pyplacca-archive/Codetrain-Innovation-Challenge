@@ -34,7 +34,7 @@ export default function Settings() {
 	return (
 		<Layout>
 			<SettingsContainer>
-				<h2>Settings</h2>
+				<h1>Settings</h1>
 				<div>
 					<section id="profile-settings">
 						<h3>Profile</h3>
