@@ -4,6 +4,7 @@ import * as Buttons from "./Buttons";
 import * as Icons from "./Icons";
 import Footer from "./Footer";
 import Blank from "./Blank";
+import CheckoutModal from "./CheckoutModal";
 
 
 function Link ({to, children, ...props}) {
@@ -57,4 +58,5 @@ export {
 	Buttons,
 	Icons,
 	Badge,
+	CheckoutModal,
 };
