@@ -13,6 +13,9 @@ export const initialAppState = {
 	],
 	product: null,
 	cart: [],
+	showModal: {
+		checkout: true,
+	}
 };
 
 export function appReducer(state, action) {
@@ -55,9 +58,19 @@ export function appReducer(state, action) {
 
 		case "remove_from_cart":
 			// expects an id as payload
+			console.log(state.cart)
 			return {
 				...state,
-				cart: state.cart.filter(item => item.id !== payload)
+				cart: state.cart.filter(id => id !== payload)
+			}
+
+		case "close_modal":
+			return {
+				...state,
+				showModal: {
+					...state.showModal,
+					[payload]: false
+				}
 			}
 
 		default: return state;
