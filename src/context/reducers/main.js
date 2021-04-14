@@ -53,7 +53,11 @@ export function appReducer(state, action) {
 			// expects an object as payload
 			return {
 				...state,
-				cart: [...state.cart, payload]
+				cart: [...state.cart, ...(
+					!state.cart.includes(payload)
+						? [payload]
+						: []
+				)]
 			}
 
 		case "remove_from_cart":
@@ -62,6 +66,15 @@ export function appReducer(state, action) {
 			return {
 				...state,
 				cart: state.cart.filter(id => id !== payload)
+			}
+
+		case "open_modal":
+			return {
+				...state,
+				showModal: {
+					...state.showModal,
+					[payload]: true
+				}
 			}
 
 		case "close_modal":
