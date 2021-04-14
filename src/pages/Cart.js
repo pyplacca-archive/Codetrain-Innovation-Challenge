@@ -7,12 +7,24 @@ import { AppContext } from "../context";
 import { data as dummyData } from '../utils/dummy';
 
 export default function CartScreen() {
-	const {state: { cart } } = useContext(AppContext);
-	console.log(cart)
+	const {state: { cart }, dispatch } = useContext(AppContext);
+
+	const removeFromCart = (itemId) => {
+		return () => {
+			dispatch({
+				type: "remove_from_cart",
+				payload: itemId,
+			})
+		}
+	}
+
 	return (
 		<Layout>
 			<CartContainer>
-				<h2>Cart</h2>
+				<div>
+					<h1>Cart</h1>
+					<button>Proceed to payment</button>
+				</div>
 				{
 					!cart.length ? (
 						<Blank>You have no items in your cart</Blank>
@@ -20,7 +32,14 @@ export default function CartScreen() {
 						<ProductsGrid>
 							{dummyData
 								.filter(({id}) => cart.includes(id))
-								.map(item => <Card {...item}/>)
+								.map(item => (
+									<CartItem key={item.id}>
+										<Card {...item}/>
+										<button onClick={removeFromCart(item.id)}>
+											Remove
+										</button>
+									</CartItem>
+								))
 							}
 						</ProductsGrid>
 					)
@@ -31,8 +50,23 @@ export default function CartScreen() {
 }
 
 const CartContainer = styled.div`
-	h2 {
+	> *:nth-child(1) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		margin-bottom: 1.5rem;
+
+		button {
+			padding: var(--pad-m);
+			background-color: green;
+			color: #fff;
+			border-radius: .5rem;
+			transition: transform .1s ease-in-out;
+
+			&:active {
+				transform: scale(.97);
+			}
+		}
 	}
 `;
 
@@ -45,3 +79,35 @@ const ProductsGrid = styled.div`
 	// grid-template-columns: repeat(auto-fit, minmmax());
 `;
 
+const CartItem = styled.div`
+	position: relative;
+	overflow: hidden;
+	border-radius: 1rem;
+
+	> *:nth-child(1) {
+		transition: filter .15s ease-in-out;
+	}
+
+	button {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background-color: var(--artis-red);
+		color: #fff;
+		padding: var(--pad-m) 0;
+		text-align: center;
+		transform: translateY(101%);
+		transition: transform .15s ease-in-out;
+	}
+
+	&:hover {
+		> *:nth-child(1) {
+			filter: blur(1.15px);
+		}
+
+		button {
+			transform: translateY(0)
+		}
+	}
+`
