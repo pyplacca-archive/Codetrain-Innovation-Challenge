@@ -38,6 +38,10 @@ a {
   font-size: 1rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 li {
   cursor: pointer;
   list-style-type: none;
