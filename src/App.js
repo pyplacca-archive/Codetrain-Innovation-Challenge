@@ -1,13 +1,14 @@
 import AppRouter from "./AppRouter";
 import { AppProvider } from "./context";
 import ScreensNavigator from "./ScreensNavigator";
-import { CheckoutModal } from "./components";
+import { CheckoutModal, UploadModal } from "./components";
 
 function App() {
 	return (
 		<AppProvider>
 			<AppRouter />
 			<CheckoutModal/>
+			<UploadModal/>
 			<ScreensNavigator/>
 		</AppProvider>
 	);
