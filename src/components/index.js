@@ -5,6 +5,7 @@ import * as Icons from "./Icons";
 import Footer from "./Footer";
 import Blank from "./Blank";
 import CheckoutModal from "./CheckoutModal";
+import UploadModal from "./UploadModal";
 
 
 function Link ({to, children, ...props}) {
@@ -59,4 +60,5 @@ export {
 	Icons,
 	Badge,
 	CheckoutModal,
+	UploadModal,
 };
