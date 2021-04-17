@@ -1,5 +1,5 @@
 // third-party
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { navigate } from '@reach/router';
 // components
@@ -7,16 +7,32 @@ import Layout from '../components/home/Layout';
 import { Card } from '../components/home';
 // others
 import { AppContext } from '../context';
-import { data as dummyData } from '../utils/dummy';
+import { db } from "../firebase";
+// import { data as dummyData } from '../utils/dummy';
 
 export default function Home() {
-	const { dispatch } = useContext(AppContext);
+	const { state, dispatch } = useContext(AppContext);
 	const [selectedCard, setSelectedCard] = useState(null);
+
+	useEffect(() => {
+		console.log({products: state.products});
+	}, [state.products])
+
+	useEffect(() => {
+		// get products from firestore
+		db.collection("products").get().then(query => {
+			console.log([...query.docs.map(doc => doc.data())])
+			dispatch({
+				type: "populate_products",
+				payload: [...query.docs.map(doc => doc.data())]
+			})
+		})
+	}, [])
 
 	return (
 		<Layout>
 			<ProductsGrid>
-				{dummyData.map(info => (
+				{state.products.map(info => (
 					<Card
 						{...info}
 						selected={selectedCard === info.id}
@@ -38,9 +54,9 @@ export default function Home() {
 
 const ProductsGrid = styled.div`
 	display: flex;
-	justify-content: space-between;
+	// justify-content: space-between;
 	flex-wrap: wrap;
-	gap: var(--pad-m);
+	gap: var(--pad-l);
 	// display: grid;
 	// grid-template-columns: repeat(auto-fit, minmmax());
 `;
