@@ -3,20 +3,23 @@ import styled, { keyframes } from "styled-components";
 import navigate from "@reach/router";
 import { ProfileAvatar } from "../home";
 import { AppContext } from "../../context";
+import { OutsideAlerter } from "../";
 
 export default function ProfileMenu(props) {
 	const { state: { profile } } = useContext(AppContext);
 
 	return (
-		<ProfileMenuContainer {...props}>
-			<ProfileAvatar size="150px"/>
-			<div className="details">
-				<p>{profile.fullname}</p>
-				<p>{profile.email}</p>
-				<p>{profile.mobile}</p>
-			</div>
-			<button className="sign-out">Sign out</button>
-		</ProfileMenuContainer>
+		<OutsideAlerter closeFn={props.close}>
+			<ProfileMenuContainer {...props}>
+				<ProfileAvatar size="150px"/>
+				<div className="details">
+					<p>{profile.fullname}</p>
+					<p>{profile.email}</p>
+					<p>{profile.mobile}</p>
+				</div>
+				<button className="sign-out">Sign out</button>
+			</ProfileMenuContainer>
+		</OutsideAlerter>
 	)
 }
 
