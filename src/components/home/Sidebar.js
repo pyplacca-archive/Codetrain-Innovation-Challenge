@@ -11,6 +11,10 @@ export default function Sidebar() {
 		return window.location.pathname === route ? "active" : "outlined";
 	};
 
+	const closeProfileMenu = () => {
+		setShowProfileMenu(!showProfileMenu)
+	}
+
 	return (
 		<SidebarContainer>
 			<div className="apart">
@@ -20,7 +24,7 @@ export default function Sidebar() {
 				<SidebarItem title="Profile">
 					<Icons.Profile
 						className={setClass("/profile")}
-						onClick={() => setShowProfileMenu(!showProfileMenu)}
+						onClick={closeProfileMenu}
 					/>
 					{ showProfileMenu ? (
 						<ProfileMenu
@@ -31,6 +35,7 @@ export default function Sidebar() {
 								zIndex: 10,
 								backgroundColor: "#fff",
 							}}
+							close={closeProfileMenu}
 						/>
 					) : null}
 				</SidebarItem>
