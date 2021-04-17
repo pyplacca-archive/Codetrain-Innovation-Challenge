@@ -18,3 +18,5 @@ export const data = [
 		id: '1q2w3e4r5t6y7u8i9o0p',
 	}
 ]
+
+export const tags = ["one", "two", "three", "four", "five"];
