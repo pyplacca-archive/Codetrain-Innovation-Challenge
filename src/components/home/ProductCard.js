@@ -15,7 +15,7 @@ export default function Card({onClick=()=>{}, ...props}) {
 			<img src={ props?.image } alt="" className='card--product-image'/>
 			<div className='card-bottom'>
 				<div className="card-bottom--lead">
-					<h4 className='card--product-name'>{ props?.name }</h4>
+					<h4 className='card--product-name'>{ props?.name || "No name"}</h4>
 					<p className='card--product-price'>GHC { props?.price?.toFixed(2) }</p>
 				</div>
 				<Tag className='card--product-tag'>{ props?.tags?.[0] }</Tag>
