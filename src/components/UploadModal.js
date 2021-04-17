@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import { storage, db } from "../firebase";
 import * as uuid from "uuid";
 import { BtnRegular } from '../components/Buttons';
-// import { tags } from ".."
+import { tags } from "../utils/dummy";
 
 export default function UploadModal() {
 	const { state: { showModal, profile }, dispatch } = useContext(AppContext);
