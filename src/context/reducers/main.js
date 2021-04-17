@@ -4,6 +4,7 @@ export const initialAppState = {
 		fullname: "John Graham",
 		email: "jgraham@email.com",
 		mobile: "+1 23 456 7890",
+		location: "Accra",
 	},
 	preferences: {
 		notification: {},
@@ -12,9 +13,11 @@ export const initialAppState = {
 		// {title: null, eta: null}
 	],
 	product: null,
+	products: [],
 	cart: [],
 	showModal: {
-		checkout: true,
+		checkout: false,
+		upload: true
 	}
 };
 
@@ -62,7 +65,6 @@ export function appReducer(state, action) {
 
 		case "remove_from_cart":
 			// expects an id as payload
-			console.log(state.cart)
 			return {
 				...state,
 				cart: state.cart.filter(id => id !== payload)
@@ -84,6 +86,18 @@ export function appReducer(state, action) {
 					...state.showModal,
 					[payload]: false
 				}
+			}
+
+		case "populate_products":
+			return {
+				...state,
+				products: payload
+			}
+
+		case "upload_product":
+			return {
+				...state,
+				products: [...state.products, payload]
 			}
 
 		default: return state;
