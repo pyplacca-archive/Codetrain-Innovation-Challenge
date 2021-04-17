@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Blank from "./Blank";
 import CheckoutModal from "./CheckoutModal";
 import UploadModal from "./UploadModal";
+import OutsideAlerter from "./OutsideAlerter";
 
 
 function Link ({to, children, ...props}) {
@@ -61,4 +62,5 @@ export {
 	Badge,
 	CheckoutModal,
 	UploadModal,
+	OutsideAlerter
 };
