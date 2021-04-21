@@ -25,24 +25,28 @@ export default function Card({onClick=()=>{}, ...props}) {
 }
 
 const CardContainer = styled.div`
-	width: 200px;
+	width: var(--card-width);
 	border-radius: 1rem;
 	background-color: #fff;
 	border: 2px solid ${props => props.highlight ? 'var(--artis-blue)' : 'transparent'};
 	overflow: hidden;
 	cursor: pointer;
 	transition: border-color .15s ease-in-out;
+	display: flex;
+	flex-direction: column;
 
 	.card--product-image {
 		width: 100%;
 		height: 7rem;
 		object-fit: cover;
+		transition: all .15s ease-in;
 	}
 
 	.card-bottom {
 		padding: var(--pad-s);
 		display: flex;
 		flex-direction: column;
+		flex-grow: 1;
 
 		.card-bottom--lead {
 			margin-bottom: var(--pad-m);
@@ -54,6 +58,13 @@ const CardContainer = styled.div`
 
 		.card--product-tag {
 			align-self: flex-end;
+			margin-top: auto;
+		}
+	}
+
+	&:hover {
+		.card--product-image {
+			object-fit: contain;
 		}
 	}
 `;

@@ -1,15 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Location } from '@reach/router';
 import Sidebar from "./Sidebar";
 import Navigation from "./Navigation";
 import Preview from './ProductPreview';
-import { AppContext } from "../../context";
 
 export default function Layout({ children, ...props }) {
-	const { state: { selectedProduct } } = useContext(AppContext);
-	const [showPreview, setShowPreview] = useState(true);
-
 	return (
 		<LayoutContainer>
 			<Navigation />
@@ -42,4 +37,6 @@ const LayoutBottomRight = styled.div`
 	background-color: #f6f6f6;
 	margin: 0 var(--pad-l) var(--pad-l) 0;
 	border-radius: 20px;
+	height: 100%;
+	overflow-y: auto;
 `;

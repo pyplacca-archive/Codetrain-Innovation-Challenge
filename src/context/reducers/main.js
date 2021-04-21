@@ -17,7 +17,7 @@ export const initialAppState = {
 	cart: [],
 	showModal: {
 		checkout: false,
-		upload: true
+		upload: false,
 	}
 };
 

@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export default function Blank({ children, ...props }) {
-	return <BlankContainer {...props}>{children}</BlankContainer>;
+	return (
+		<BlankContainer className="blank" {...props}>
+			{ children }
+		</BlankContainer>
+	)
 }
 
 const BlankContainer = styled.div`
