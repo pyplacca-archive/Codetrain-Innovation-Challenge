@@ -19,6 +19,7 @@
   --safe-grey: #6d6a6a;
 
   --scrollbar-thickness: 6px;
+  --card-width: 200px;
 }
 
 * {
