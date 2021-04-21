@@ -7,7 +7,7 @@ import { AppContext } from "../context";
 import { data as dummyData } from '../utils/dummy';
 
 export default function CartScreen() {
-	const {state: { cart }, dispatch } = useContext(AppContext);
+	const {state: { cart, products }, dispatch } = useContext(AppContext);
 
 	const removeFromCart = (itemId) => {
 		return () => {
@@ -37,7 +37,7 @@ export default function CartScreen() {
 						<Blank>You have no items in your cart</Blank>
 					) : (
 						<ProductsGrid>
-							{dummyData
+							{products
 								.filter(({id}) => cart.includes(id))
 								.map(item => (
 									<CartItem key={item.id}>
