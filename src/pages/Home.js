@@ -57,20 +57,4 @@ const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
   justify-items: center;
-
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-track,
-  &::-webkit-scrollbar-thumb {
-    width: 5px;
-    border-radius: 6px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--artis-grey);
-
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--safe-grey);
-  }
 `;
