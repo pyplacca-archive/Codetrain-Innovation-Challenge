@@ -3,41 +3,44 @@ import styled, { keyframes } from "styled-components";
 import { navigate } from "@reach/router";
 import Blank from "../Blank";
 import { Settings } from "../Icons";
+import { OutsideAlerter } from "../";
 import { AppContext } from "../../context";
 
 export default function NotificationsMenu({ ...props }) {
 	const { state: { notifications } } = useContext(AppContext);
 
 	return (
-		<MenuContainer {...props}>
-			<h4 className="menu-title">Notifications</h4>
-			<ul className="notification-list">
-				{
-					notifications.length ? (
-						notifications.slice(0, 10).map(notification => (
-							<Notification {...notification} />
-						))
-					) : (
-						<Blank
-							style={{
-								color: "var(--safe-grey)",
-								fontWeight: "300",
-								fontSize: ".9em",
-								minHeight: "100px",
-							}}
-						>
-							You've got no notifications
-						</Blank>
-					)
-				}
-			</ul>
-			<div className="notifications-footer">
-				<span>
-					<Settings onClick={() => navigate("/settings")} size="1.2rem"/>
-				</span>
-				<p onClick={() => navigate("/notifications")}>All notifications</p>
-			</div>
-		</MenuContainer>
+		<OutsideAlerter closeFn={props.close}>
+			<MenuContainer {...props}>
+				<h4 className="menu-title">Notifications</h4>
+				<ul className="notification-list">
+					{
+						notifications.length ? (
+							notifications.slice(0, 10).map(notification => (
+								<Notification {...notification} />
+							))
+						) : (
+							<Blank
+								style={{
+									color: "var(--safe-grey)",
+									fontWeight: "300",
+									fontSize: ".9em",
+									minHeight: "100px",
+								}}
+							>
+								You've got no notifications
+							</Blank>
+						)
+					}
+				</ul>
+				<div className="notifications-footer">
+					<span>
+						<Settings onClick={() => navigate("/settings")} size="1.2rem"/>
+					</span>
+					<p onClick={() => navigate("/notifications")}>All notifications</p>
+				</div>
+			</MenuContainer>
+		</OutsideAlerter>
 	);
 }
 
