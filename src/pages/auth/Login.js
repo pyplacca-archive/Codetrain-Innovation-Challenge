@@ -4,7 +4,7 @@ import { AuthScreenLayout, FormGroup } from "../../components/auth";
 import { Icons, Link } from "../../components";
 import { BtnRegular } from "../../components/Buttons";
 import { artisBlue } from "../../config";
-import leftImage from '../../assets/decor2.jpg';
+import leftImage from '../../assets/login 1.png';
 
 
 export default function Login (props) {

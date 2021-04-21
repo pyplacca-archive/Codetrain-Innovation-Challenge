@@ -5,6 +5,7 @@ export const initialAppState = {
 		email: "jgraham@email.com",
 		mobile: "+1 23 456 7890",
 		location: "Accra",
+		image: null,
 	},
 	preferences: {
 		notification: {},

@@ -46,7 +46,7 @@ export default function ProfileAvatar (props) {
 					<Camera size="1.2rem" color="#fff"/>
 				</button>
 			) : null}
-			<img src={state.profile.avatar || avi} alt=""/>
+			<img src={state.profile.avatar/* || avi*/} alt=""/>
 		</AvatarContainer>
 	)
 }
