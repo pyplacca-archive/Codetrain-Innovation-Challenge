@@ -101,6 +101,12 @@ export function appReducer(state, action) {
 				products: [...state.products, payload]
 			}
 
+		case "delete_product":
+			return {
+				...state,
+				products: state.products.filter(({id}) => id !== payload)
+			}
+
 		default: return state;
 	}
 }
