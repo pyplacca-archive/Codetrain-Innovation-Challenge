@@ -2,6 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { navigate } from "@reach/router";
 import { Icons } from "../";
+import mpiFilled from "../../assets/icons/box_filled.png";
+import mpiOutlined from "../../assets/icons/box.png";
 import ProfileMenu from "../sidebar/Profile";
 
 export default function Sidebar() {
@@ -13,6 +15,11 @@ export default function Sidebar() {
 
 	const closeProfileMenu = () => {
 		setShowProfileMenu(!showProfileMenu)
+	}
+
+	const myProductsIcon = {
+		filled: mpiFilled,
+		outlined: mpiOutlined
 	}
 
 	return (
@@ -38,6 +45,15 @@ export default function Sidebar() {
 							close={closeProfileMenu}
 						/>
 					) : null}
+				</SidebarItem>
+				<SidebarItem onClick={() => navigate("/my-products")}>
+					<img
+						src={setClass("/my-products") === "active" ? myProductsIcon.filled : myProductsIcon.outlined}
+						alt="icon"
+						style={{
+							width: "var(--icon-size)"
+						}}
+					/>
 				</SidebarItem>
 			</div>
 			<SidebarItem title="Settings" onClick={() => navigate("/settings")}>
