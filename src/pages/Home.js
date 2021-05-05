@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     // get products from firestore
     if (!state.products.length) {
-      db.collection("products").get().then(query => {
+      db.collection("items").get().then(query => {
         dispatch({
           type: "populate_products",
           payload: [...query.docs.map(doc => doc.data())]
