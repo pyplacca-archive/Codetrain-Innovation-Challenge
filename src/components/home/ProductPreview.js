@@ -31,16 +31,24 @@ export default function Preview() {
 					GHC { product?.price?.toFixed(2) }
 				</h4>
 				<p className="preview--title">Description</p>
-				<p>{ product?.description }</p>
+				<p>{ product?.description || "No description provided by seller"}</p>
 				<p className="preview--title">Seller</p>
 				{/* seller info goes here */}
+				<div className="preview--seller">
+					<div className="seller-details">
+						<p>{ product?.seller?.fullname || "Anonymous"}</p>
+						<p>{ product?.seller?.mobile || "Uknown"}</p>
+					</div>
+				</div>
 				<p className="preview--title">Tags</p>
-				<p>{ product?.tags?.join(', ') }</p>
+				<p>{ product?.tags?.join(', ') || "No related tags founds" }</p>
 				<div className="buttons">
 					<BtnRegular style={{backgroundColor: "green"}}>
 						Buy now
 					</BtnRegular>
-					<BtnRegular onClick={addToCart}>Add to cart</BtnRegular>
+					<BtnRegular onClick={addToCart}>
+						Add to cart
+					</BtnRegular>
 				</div>
 			</div>
 		</PreviewContainer>
@@ -64,11 +72,11 @@ const PreviewContainer = styled.article`
 	overflow-y: hidden;
 
 	.preview-container-inner {
-		// display: flex;
-		// flex-direction: column;
+		display: flex;
+		flex-direction: column;
 		overflow-y: auto;
 		// flex-grow: 1;
-		// min-height: 800px;
+		height: 100%;
 
 		img {
 			width: 100%;
@@ -92,12 +100,31 @@ const PreviewContainer = styled.article`
 			margin: .5rem 0;
 		}
 
+		.preview--seller {
+			display: flex;
+			align-items: center;
+
+			img {
+				margin-right: var(--pad-m);
+				border-radius: 50%;
+				border: 1px solid grey;
+				width: 70px;
+				height: 70px;
+				object-fit: cover;
+			}
+
+			.seller-details {
+
+			}
+		}
+
 		.buttons {
 			margin-top: auto;
 			width: 100%;
 			display: grid;
 			grid-template-colums: 1fr 1fr;
 			row-gap: var(--pad-m);
+			margin-top: auto;
 		}
 	}
 `;

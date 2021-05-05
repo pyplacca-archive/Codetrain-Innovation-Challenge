@@ -77,7 +77,7 @@ const FormGroupContainer = styled.div`
 			props.setLabelAsPlaceholder ? "calc(var(--ifz) + var(--padt))" : "0"};
 		// font-size: ${(props) => (props.setLabelAsPlaceholder ? "1em" : ".9em")};
 		// left: ${(props) => (!props.setLabelAsPlaceholder ? "0" : "var(--cpad)")};
-		color: ${(props) => (props.setLabelAsPlaceholder ? "#c4c4c4" : "#000")};
+		color: ${(props) => (props.setLabelAsPlaceholder ? "#c4c4c4" : "var(--artis-blue)")};
 		pointer-events: none;
 		transition-property: transform, font-size, top, left, color;
 		transition-duration: 0.25s;

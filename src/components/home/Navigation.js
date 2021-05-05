@@ -11,6 +11,10 @@ export default function Navigation() {
 	const { state } = useContext(AppContext);
 	const [showNotifications, setShowNotifications] = useState(false);
 
+	const closeNotificationsMenu = () => {
+		setShowNotifications(!showNotifications)
+	}
+
 	const notificationCount = state.notifications.length;
 	const cartCount = state?.cart?.length;
 
@@ -26,7 +30,7 @@ export default function Navigation() {
 					) : null}
 				</NavItem>
 				<NavItem
-					onClick={() => setShowNotifications(!showNotifications)}
+					onClick={closeNotificationsMenu}
 					style={{
 						display: "flex",
 						flexDirection: "column",
@@ -44,6 +48,7 @@ export default function Navigation() {
 								top: "3rem",
 								right: "1.5rem",
 							}}
+							close={closeNotificationsMenu}
 						/>
 					) : null}
 				</NavItem>

@@ -5,23 +5,26 @@ import { Card } from '../components/home';
 import { Blank } from "../components";
 import { AppContext } from "../context";
 import { data as dummyData } from '../utils/dummy';
+import { db } from "../firebase";
 
 export default function CartScreen() {
-	const {state: { cart, products }, dispatch } = useContext(AppContext);
+	const {state: { products, profile }, dispatch } = useContext(AppContext);
 
-	const removeFromCart = (itemId) => {
-		return () => {
-			dispatch({
-				type: "remove_from_cart",
-				payload: itemId,
-			})
-		}
+	const deleteProduct = (id) => {
+		db.collection("products").doc(id).delete().then(() => {
+			return () => {
+				dispatch({
+					type: "delete_product",
+					payload: id,
+				})
+			}
+		})
 	}
 
-	const proceedToPayment = () => {
+	const showUploadModal = () => {
 		dispatch({
 			type: "open_modal",
-			payload: "checkout"
+			payload: "upload"
 		})
 	}
 
@@ -29,21 +32,21 @@ export default function CartScreen() {
 		<Layout>
 			<CartContainer>
 				<div>
-					<h1>Cart</h1>
-					{cart.length ? <button onClick={proceedToPayment}>Proceed to payment</button> : null}
+					<h1>My Products</h1>
+					<button onClick={showUploadModal}>Upload item</button>
 				</div>
 				{
-					!cart.length ? (
-						<Blank>You have no items in your cart</Blank>
+					!products.length ? (
+						<Blank>You have not uploaded any items yet</Blank>
 					) : (
 						<ProductsGrid>
 							{products
-								.filter(({id}) => cart.includes(id))
+								.filter(({seller}) => profile.id === seller.id || profile.email === seller.email)
 								.map(item => (
 									<CartItem key={item.id}>
 										<Card {...item}/>
-										<button onClick={removeFromCart(item.id)}>
-											Remove
+										<button onClick={deleteProduct(item.id)}>
+											Delete
 										</button>
 									</CartItem>
 								))
@@ -65,7 +68,7 @@ const CartContainer = styled.div`
 
 		button {
 			padding: var(--pad-m);
-			background-color: green;
+			background-color: var(--artis-blue);
 			color: #fff;
 			border-radius: .5rem;
 			transition: transform .1s ease-in-out;
