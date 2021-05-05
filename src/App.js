@@ -9,7 +9,7 @@ function App() {
 			<AppRouter />
 			<CheckoutModal/>
 			<UploadModal/>
-			{/*<ScreensNavigator/>*/}
+			<ScreensNavigator/>
 		</AppProvider>
 	);
 }

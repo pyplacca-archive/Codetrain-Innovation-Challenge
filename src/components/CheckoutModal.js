@@ -7,7 +7,7 @@ import { BtnRegular } from '../components/Buttons';
 import { data as dummyData } from '../utils/dummy';
 
 export default function CheckoutModal() {
-	const { state: { showModal, cart }, dispatch } = useContext(AppContext);
+	const { state: { showModal, cart, products }, dispatch } = useContext(AppContext);
 	const closeModal = () => {
 		dispatch({
 			type: "close_modal",
@@ -15,7 +15,7 @@ export default function CheckoutModal() {
 		})
 	}
 
-	const checkoutItems = dummyData.filter(item => cart.includes(item.id));
+	const checkoutItems = products.filter(item => cart.includes(item.id));
 
 	return (
 		<Modal

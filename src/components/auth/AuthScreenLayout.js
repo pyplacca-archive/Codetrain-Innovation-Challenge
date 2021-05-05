@@ -52,7 +52,7 @@ const ScreenLayout = styled.main`
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			object-position: ${props => props.imagePos || "center 20%"};
+			object-position: ${props => props.imagePos || "center"};
 		}
 
 		.artwork-text {

@@ -5,6 +5,7 @@ export const initialAppState = {
 		email: "jgraham@email.com",
 		mobile: "+1 23 456 7890",
 		location: "Accra",
+		image: null,
 	},
 	preferences: {
 		notification: {},
@@ -98,6 +99,12 @@ export function appReducer(state, action) {
 			return {
 				...state,
 				products: [...state.products, payload]
+			}
+
+		case "delete_product":
+			return {
+				...state,
+				products: state.products.filter(({id}) => id !== payload)
 			}
 
 		default: return state;

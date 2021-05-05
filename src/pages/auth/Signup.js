@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { navigate } from "@reach/router";
 import { AuthScreenLayout, FormGroup } from "../../components/auth";
 import { Icons, Link } from "../../components";
 import { BtnRegular } from "../../components/Buttons";
 import { artisBlue } from "../../config";
-import rightImage from '../../assets/decor1.jpg';
+import rightImage from '../../assets/signup 1.png';
 
 export default function Signup (props) {
 	const [email, setEmail] = useState('');
@@ -26,6 +27,7 @@ export default function Signup (props) {
 			hasSpecial: /[^a-zA-Z0-9]/.test(value)
 		})
 		console.log(Object.values(password).reduce((res, val) => res && val, false))
+		navigate("/profile-setup");
 	}
 
 	const PasswordIcon = showPassword ? Icons.VisibilityOff : Icons.VisibilityOn;
@@ -51,7 +53,7 @@ export default function Signup (props) {
 							name: "password",
 							autoComplete: "off",
 							type: showPassword ? "text" : "password",
-							value: password.value,
+							value: password,
 							onChange: validatePassword,
 						}}
 						icon={<PasswordIcon

@@ -1,7 +1,14 @@
 import { useEffect } from "react";
 import { Router } from "@reach/router";
-import { PageNotFound, Home, Settings, Notifications, Cart } from "./pages";
-import { Login, Signup } from './pages/auth';
+import {
+	PageNotFound,
+	Home,
+	Settings,
+	Notifications,
+	Cart,
+	MyProducts
+} from "./pages";
+import { Login, Signup, ProfileSetup } from './pages/auth';
 import { storage } from "./firebase";
 
 export default function AppRouter() {
@@ -21,12 +28,14 @@ export default function AppRouter() {
 	return (
 		<Router>
 			<PageNotFound default />
-			<Signup path="/signup"/>
 			<Login path="/login"/>
+			<Signup path="/signup"/>
+			<ProfileSetup path="/profile-setup"/>
 			<Home path="/" />
 			<Settings path="/settings" />
 			<Notifications path="/notifications"/>
 			<Cart path="/cart"/>
+			<MyProducts path="/my-products"/>
 		</Router>
 	);
 }
