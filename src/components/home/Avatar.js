@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import styled from "styled-components";
 import { Camera } from "../Icons";
 import { AppContext } from "../../context";
-import avi from "../../assets/avatar.png";
+import avi from "../../assets/KD.jpg";
 
 export default function ProfileAvatar (props) {
 	/*

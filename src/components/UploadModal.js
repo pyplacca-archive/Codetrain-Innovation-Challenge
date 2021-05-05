@@ -117,8 +117,8 @@ export default function UploadModal() {
 				seller: profile,
 				id: productId,
 			};
-			const doc = await db.collection('products').doc(productId).set(prod)
-			console.log("uploaded to firestore", {doc})
+			await db.collection('items').doc(productId).set(prod)
+			console.log({prod})
 			// save uploaded product to state
 			dispatch({
 				type: "upload_product",
