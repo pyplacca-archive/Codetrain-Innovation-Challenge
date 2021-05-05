@@ -1,8 +1,8 @@
 export const initialAppState = {
 	profile: {
-		username: "jgraham",
-		fullname: "John Graham",
-		email: "jgraham@email.com",
+		username: "Kd",
+		fullname: "Kayla's dad",
+		email: "kd@email.com",
 		mobile: "+1 23 456 7890",
 		location: "Accra",
 		image: null,
