@@ -154,7 +154,7 @@ const SettingsContainer = styled.div`
 
 				#payment-settings {
 					ul li {
-						padding: calc(var(--pad-m) + var(--pad-xs)) var(--pad-m);
+						padding: var(--pad-m);
 						border-radius: 1rem;
 						display: flex;
 						align-items: center;
