@@ -224,6 +224,7 @@ export default function UploadModal() {
 const ModalInner = styled.div`
 	max-height: 680px;
 	min-width: 500px;
+	max-width: 700px;
 	overflow-y: auto;
 	padding: 0 var(--pad-s);
 
