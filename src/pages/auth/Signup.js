@@ -14,6 +14,7 @@ export default function Signup (props) {
 
 	const handleFormSubmission = event => {
 		event.preventDefault()
+		navigate("/profile-setup");
 	}
 
 
@@ -27,7 +28,6 @@ export default function Signup (props) {
 			hasSpecial: /[^a-zA-Z0-9]/.test(value)
 		})
 		console.log(Object.values(password).reduce((res, val) => res && val, false))
-		navigate("/profile-setup");
 	}
 
 	const PasswordIcon = showPassword ? Icons.VisibilityOff : Icons.VisibilityOn;
@@ -53,7 +53,7 @@ export default function Signup (props) {
 							name: "password",
 							autoComplete: "off",
 							type: showPassword ? "text" : "password",
-							value: password,
+							value: password.value,
 							onChange: validatePassword,
 						}}
 						icon={<PasswordIcon
