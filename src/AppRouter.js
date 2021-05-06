@@ -16,7 +16,7 @@ export default function AppRouter() {
 	// 	getAllProducts()
 	// }, [])
 
-	// const getAllProducts = () => {
+	// const deleteAllProductImages = () => {
 	// 	storage.child("products").listAll().then(res => {
 	// 		res.items.forEach(prod => {
 	// 			console.log({prod});
