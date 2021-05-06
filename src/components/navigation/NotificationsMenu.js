@@ -71,6 +71,7 @@ const MenuContainer = styled.div`
 	opacity: 0;
 	transform: translateY(-1.5rem);
 	animation: ${slideDownFadeIn} 0.25s ease-out 0s forwards;
+	z-index: 10;
 
 	.menu-title {
 		border-bottom: 1px solid #f0f0f0;
@@ -116,7 +117,7 @@ const NotificationContainer = styled.li`
 		padding: var(--pad-s) var(--pad-xs);
 
 		.notification-title {
-			font-size: 0.8rem;
+			font-size: 0.9rem;
 			font-weight: 300;
 		}
 
@@ -125,7 +126,7 @@ const NotificationContainer = styled.li`
 			font-weight: 300;
 			margin-left: auto;
 			width: fit-content;
-			font-size: 0.9em;
+			font-size: 0.8em;
 		}
 	}
 `;
