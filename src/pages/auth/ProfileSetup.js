@@ -99,7 +99,10 @@ export default function ProfileSetup() {
 						className="next-btn"
 						onClick={handleSubmission}
 					>{step > 1 ? "Complete" : "Next"}</BtnRegular>
-					{ step > 1 ? <button className="previous-btn">Back</button> : null}
+					{ step > 1
+						? <button className="previous-btn" onClick={() => setStep(step-1)}>Back</button>
+						: null
+					}
 				</div>
 			</div>
 		</Container>
