@@ -35,7 +35,7 @@ export default function CheckoutModal() {
 				type: "notification",
 				payload: [
 					{
-						title: `You purchased ${items.length} item(2) for GHC${totalCost}`,
+						title: `You purchased ${items.length} item(s) for GHC${totalCost}`,
 						eta: "just now"
 					},
 				]
