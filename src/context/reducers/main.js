@@ -19,6 +19,7 @@ export const initialAppState = {
 	showModal: {
 		checkout: false,
 		upload: false,
+		processingPayment: false,
 	}
 };
 
@@ -71,12 +72,21 @@ export function appReducer(state, action) {
 				cart: state.cart.filter(id => id !== payload)
 			}
 
+		case "clear_cart":
+			return {
+				...state,
+				cart: [],
+			}
+
 		case "open_modal":
 			return {
 				...state,
 				showModal: {
-					...state.showModal,
-					[payload]: true
+					...Object.keys(state.showModal).reduce((res, modal) => {
+						res[modal] = false;
+						return res
+					}, {}),
+					[payload]: true,
 				}
 			}
 
