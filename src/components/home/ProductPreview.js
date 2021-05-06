@@ -18,6 +18,14 @@ export default function Preview() {
 		})
 	}
 
+	const buyNow = () => {
+		addToCart()
+		dispatch({
+			type: "open_modal",
+			payload: "checkout"
+		})
+	}
+
 	// const closePreview = () => {
 	// 	setShowPreview(false);
 	// }
@@ -43,7 +51,7 @@ export default function Preview() {
 				<p className="preview--title">Tags</p>
 				<p>{ product?.tags?.join(', ') || "No related tags founds" }</p>
 				<div className="buttons">
-					<BtnRegular style={{backgroundColor: "green"}}>
+					<BtnRegular style={{backgroundColor: "green"}} onClick={buyNow}>
 						Buy now
 					</BtnRegular>
 					<BtnRegular onClick={addToCart}>
