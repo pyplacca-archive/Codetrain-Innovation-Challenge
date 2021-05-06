@@ -4,7 +4,7 @@ import { navigate } from "@reach/router";
 import Search from "./Search";
 import { Bell, Cart } from "../Icons";
 import { Badge } from "../";
-import { NotificationsMenu } from "../navigation";
+import { NotificationsMenu, Greeting } from "../navigation";
 import { AppContext } from "../../context";
 
 export default function Navigation() {
@@ -51,6 +51,9 @@ export default function Navigation() {
 							close={closeNotificationsMenu}
 						/>
 					) : null}
+				</NavItem>
+				<NavItem>
+					<Greeting/>
 				</NavItem>
 			</NavigationRight>
 		</NavigationContainer>
