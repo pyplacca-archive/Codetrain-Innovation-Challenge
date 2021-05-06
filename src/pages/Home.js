@@ -11,20 +11,20 @@ import { AppContext } from '../context';
 import { db } from "../firebase";
 
 export default function Home() {
-  const { state, dispatch } = useContext(AppContext);
-  const [selectedCard, setSelectedCard] = useState(null);
+  const { state: {products}, dispatch } = useContext(AppContext);
+  const [selectedCard, setSelectedCard] = useState(!products.length);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log({products: state.products});
-    if (state.products.length) {
+    console.log({products: products});
+    if (products.length) {
       setIsLoading(false);
     }
-  }, [state.products])
+  }, [products])
 
   useEffect(() => {
     // get products from firestore
-    if (!state.products.length) {
+    if (!products.length) {
       db.collection("items").get().then(query => {
         dispatch({
           type: "populate_products",
@@ -39,7 +39,7 @@ export default function Home() {
     <Layout>
       {!isLoading ? (
         <ProductsGrid>
-          {state.products.map(info => (
+          {products.map(info => (
             <Card
               {...info}
               selected={selectedCard === info.id}
