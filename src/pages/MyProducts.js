@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Layout from "../components/home/Layout";
 import { Card } from "../components/home";
 import { Blank } from "../components";
+import { ProductsGrid } from "./Home";
 import { AppContext } from "../context";
-import { data as dummyData } from "../utils/dummy";
 import { db } from "../firebase";
 
 export default function CartScreen() {
@@ -79,13 +79,6 @@ const CartContainer = styled.div`
       }
     }
   }
-`;
-
-const ProductsGrid = styled.div`
-  grid-gap: var(--pad-l);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
-  justify-items: center;
 `;
 
 const CartItem = styled.div`
