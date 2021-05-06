@@ -27,14 +27,26 @@ export default function CheckoutModal() {
 		setIsProcessing(true);
 		clearTimeout(processingTimeout);
 		processingTimeout = setTimeout(() => {
+			const items = cart;
 			dispatch({ type: "clear_cart" })
 			// show success message after payment is processed
 			setSuccessful(true);
+			dispatch({
+				type: "notification",
+				payload: [
+					{
+						title: `You purchased ${items.length} item(2) for GHC${totalCost}`,
+						eta: "just now"
+					},
+				]
+			})
 			setTimeout(closeModal, 1500)
 		}, 5000)
 	}
 
 	const checkoutItems = products.filter(item => cart.includes(item.id));
+	console.log({checkoutItems})
+	const totalCost = checkoutItems.reduce((total, {price}) => total+price, 0)
 
 	return (
 		<Modal
@@ -48,9 +60,7 @@ export default function CheckoutModal() {
 							{ checkoutItems.map(item => <CheckoutItem {...item} key={item.id}/>) }
 						</div>
 						<BtnRegular onClick={processPayment}>
-							Pay GHC {
-								checkoutItems.reduce((total, {price}) => total+price, 0)
-							}
+							Pay GHC {totalCost}
 						</BtnRegular>
 					</>
 				) : (

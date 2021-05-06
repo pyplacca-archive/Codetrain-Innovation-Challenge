@@ -117,6 +117,15 @@ export function appReducer(state, action) {
 				products: state.products.filter(({id}) => id !== payload)
 			}
 
+		case "notification":
+			return {
+				...state,
+				notifications: [
+					...state.notifications,
+					...payload
+				]
+			}
+
 		default: return state;
 	}
 }
