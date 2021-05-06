@@ -4,6 +4,7 @@ import { Blank } from "../components";
 import { Layout, ProfileAvatar } from "../components/home";
 import { Switch, ProfileInfo } from "../components/settings";
 import { AppContext } from "../context";
+import mtnLogo from "../assets/mtn.png";
 
 export default function Settings() {
 	const { state: {profile, preferences: {notification}}, dispatch } = useContext(AppContext);
@@ -84,6 +85,13 @@ export default function Settings() {
 						</section>
 						<section id="payment-settings">
 							<h3>Payment Method</h3>
+							<ul>
+								<li>
+									<img src={mtnLogo} alt="mtn logo"/>
+									<p>{profile.mobile}</p>
+									<button>Change</button>
+								</li>
+							</ul>
 						</section>
 					</div>
 				</div>
@@ -145,7 +153,31 @@ const SettingsContainer = styled.div`
 				}
 
 				#payment-settings {
+					ul li {
+						padding: calc(var(--pad-m) + var(--pad-xs)) var(--pad-m);
+						border-radius: 1rem;
+						display: flex;
+						align-items: center;
+						background-color: var(--artis-light-grey);
 
+						img {
+							--size: 60px;
+							width: var(--size);
+							height: var(--size);
+							object-fit: cover;
+							border-radius: 50%;
+						}
+
+						p {
+							margin-left: 1.5rem;
+						}
+
+						button {
+							margin-left: auto;
+							color: var(--artis-blue);
+							cursor: pointer;
+						}
+					}
 				}
 			}
 
